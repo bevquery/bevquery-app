@@ -13,8 +13,32 @@
   </style>
 </head>
 <body>
-  <iframe src="https://script.google.com/macros/s/AKfycbzev8E18-jhMhql4c2LWlIU_jmKX6hN5TgFy1mRDwyPeUHfZOdmwSuOSs8C-nnQ5awZ/exec"></iframe>
-</body>
+  <script>
+    (function () {
+      var appUrl = "https://script.google.com/macros/s/AKfycbzev8E18-jhMhql4c2LWlIU_jmKX6hN5TgFy1mRDwyPeUHfZOdmwSuOSs8C-nnQ5awZ/exec";
+      var token = "";
 
+      try {
+        token =
+          window.localStorage.getItem("bevq_token") ||
+          window.localStorage.getItem("bevquery_token") ||
+          "";
+      } catch (e) {}
+
+      if (token) {
+        appUrl += "?sid=" + encodeURIComponent(token);
+      }
+
+      window.location.replace(appUrl);
+    })();
+  </script>
+
+  <p style="font-family:Arial,sans-serif;padding:20px;">
+    Opening BevQuery...
+    <a href="https://script.google.com/macros/s/AKfycbzev8E18-jhMhql4c2LWlIU_jmKX6hN5TgFy1mRDwyPeUHfZOdmwSuOSs8C-nnQ5awZ/exec">
+      Click here if you are not redirected.
+    </a>
+  </p>
+</body>
 </html>
 
